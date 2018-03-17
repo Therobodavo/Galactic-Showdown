@@ -696,7 +696,7 @@ RectTransform:
   m_GameObject: {fileID: 269921758}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.017677668, y: 0.017677668, z: 0.017677668}
+  m_LocalScale: {x: 0.017688952, y: 0.017688952, z: 0.017688952}
   m_Children:
   - {fileID: 1293519508}
   - {fileID: 13697256}
@@ -3031,6 +3031,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1294163652}
   - component: {fileID: 1294163651}
+  - component: {fileID: 1294163653}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -3049,7 +3050,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caaa0645be79f2e4ea6bc998a45147b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selection: {fileID: 13697255}
 --- !u!4 &1294163652
 Transform:
   m_ObjectHideFlags: 0
@@ -3063,6 +3063,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1294163653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1294163650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7845dacaa744859479c62d0ebe37092e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNumActive: 000000000000000000
+  playerTypeActive: 000000000000000000
+  playerTypeSelected: {fileID: 0}
+  playerNumSelected: {fileID: 0}
+  selector: {fileID: 13697255}
+  numbers: {fileID: 384836815}
+  types: {fileID: 1085048653}
+  lockInBtn: {fileID: 907687573}
 --- !u!1 &1389113004
 GameObject:
   m_ObjectHideFlags: 0
