@@ -7,25 +7,43 @@ using UnityEngine.UI;
 public class ButtonClick : MonoBehaviour
 {
     public GameObject selection;
-
-    public void Deactivate() 
+    GameObject selectedNum;
+    GameObject selectedType;
+    private void Deactivate() 
     {
-        GameObject host = EventSystem.current.currentSelectedGameObject;
-        selection.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = host.transform.GetChild(0).GetComponent<Text>().text;
-        if(!selection.transform.GetChild(0).gameObject.activeSelf) 
-        {
-            selection.transform.GetChild(0).gameObject.SetActive(true);
-        }
-        host.GetComponent<Button>().interactable = false;
+        selectedNum.GetComponent<Button>().interactable = false;
     }
-    public void Disable() 
+    private void Disable() 
     {
-        GameObject host = EventSystem.current.currentSelectedGameObject;
-        selection.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = host.transform.GetChild(0).GetComponent<Text>().text;
+        selectedType.SetActive(false);
+    }
+    private void ClearSelection() 
+    {
+        selection.transform.GetChild(1).gameObject.SetActive(false);
+        selection.transform.GetChild(2).gameObject.SetActive(false);
+    }
+    public void LockIn()
+    {
+        Deactivate();
+        Disable();
+        ClearSelection();
+    }
+    public void SelectNum() 
+    {
+        selectedNum = EventSystem.current.currentSelectedGameObject;
+        selection.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = selectedNum.transform.GetChild(0).GetComponent<Text>().text;
         if(!selection.transform.GetChild(1).gameObject.activeSelf) 
         {
             selection.transform.GetChild(1).gameObject.SetActive(true);
         }
-        host.SetActive(false);
+    }
+    public void SelectType() 
+    {
+        selectedType = EventSystem.current.currentSelectedGameObject;
+        selection.transform.GetChild(2).GetChild(0).GetComponent<Text>().text = selectedType.transform.GetChild(0).GetComponent<Text>().text;
+        if(!selection.transform.GetChild(2).gameObject.activeSelf) 
+        {
+            selection.transform.GetChild(2).gameObject.SetActive(true);
+        }
     }
 }
