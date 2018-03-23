@@ -19,8 +19,16 @@ public class ButtonClick : MonoBehaviour
     //Makes turn final, clears selected and updates active choices
     public void LockIn()
     {
-        this.gameObject.GetComponent<GameEngine>().playerNumActive[this.gameObject.GetComponent<GameEngine>().playerNumSelected.transform.GetSiblingIndex() - 1] = false;
-        this.gameObject.GetComponent<GameEngine>().playerTypeActive[this.gameObject.GetComponent<GameEngine>().playerTypeSelected.transform.GetSiblingIndex() - 1] = false;
+        string name = this.gameObject.GetComponent<GameEngine>().playerNumSelected.name;
+        name = name.Remove(0, 3);
+        int index = 0;
+        int.TryParse(name, out index);
+        this.gameObject.GetComponent<GameEngine>().playerNumActive[index] = false;
+
+        name = this.gameObject.GetComponent<GameEngine>().playerTypeSelected.name;
+        name = name.Remove(0, 4);
+        int.TryParse(name, out index);
+        this.gameObject.GetComponent<GameEngine>().playerTypeActive[index] = false;
         ClearSelection();
     }
 
