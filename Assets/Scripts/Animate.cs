@@ -1,13 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Animate : MonoBehaviour {
 
     //Animation class
 
     //attributes
-    SpriteRenderer Rend; //render
+    Image Rend;
+    Button button;
+
     public Sprite[] Number; // holds each sprite
     public Sprite[] noNumber; // holds each sprite
  
@@ -19,10 +22,11 @@ public class Animate : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-
+        button = GetComponent<Button>();
+        Rend = GetComponent<Image>();
         Timer = 0;
         AniTime = 0;
-        Rend = (SpriteRenderer)GetComponent("SpriteRenderer");
+
     }
 
     // Update is called once per frame
@@ -31,7 +35,9 @@ public class Animate : MonoBehaviour {
         
         Timer += increase;
         animations = Number;
-        
+        if(!button.interactable)
+            animations = noNumber;
+
 
         AniTime = (int)Mathf.Round(Timer);
 
