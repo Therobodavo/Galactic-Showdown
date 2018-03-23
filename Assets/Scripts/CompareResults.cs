@@ -27,7 +27,7 @@ public class CompareResults : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //compare will start once the play selects both type and num
-        if(this.gameObject.GetComponent<GameEngine>().playerTypeSelected != null && this.gameObject.GetComponent<GameEngine>().playerNumSelected != null)
+        if(this.gameObject.GetComponent<GameEngine>().currentTurn.playerTypeSelected != null && this.gameObject.GetComponent<GameEngine>().currentTurn.playerNumSelected != null)
         {
             checkInfo();
             compareInfo();
@@ -40,8 +40,8 @@ public class CompareResults : MonoBehaviour {
     public void checkInfo()
     {
        //cheking what variables player 1 choose
-        playerTypeSelected = this.gameObject.GetComponent<GameEngine>().playerTypeSelected;
-        playerNumSelected = this.gameObject.GetComponent<GameEngine>().playerNumSelected;
+        playerTypeSelected = this.gameObject.GetComponent<GameEngine>().currentTurn.playerTypeSelected;
+        playerNumSelected = this.gameObject.GetComponent<GameEngine>().currentTurn.playerNumSelected;
         //storing chosen values
         p1Type = playerTypeSelected.GetComponent<objectValue>().value;
         p1Num = playerNumSelected.GetComponent<objectValue>().value;
