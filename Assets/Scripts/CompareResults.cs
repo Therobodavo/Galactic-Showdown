@@ -29,36 +29,40 @@ public class CompareResults : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        /*
         //compare will start once the play selects both type and num
         if(this.gameObject.GetComponent<GameEngine>().currentTurn.playerTypeSelected != null && this.gameObject.GetComponent<GameEngine>().currentTurn.playerNumSelected != null)
         {
             checkInfo();
-            compareInfo();
+            CompareInfo();
         }
+        */
 	}
 
     public void checkInfo()
     {
        //cheking what variables player 1 choose
-        playerTypeSelected = this.gameObject.GetComponent<GameEngine>().currentTurn.playerTypeSelected;
-        playerNumSelected = this.gameObject.GetComponent<GameEngine>().currentTurn.playerNumSelected;
+       // playerTypeSelected = this.gameObject.GetComponent<GameEngine>().currentTurn.playerTypeSelected;
+       // playerNumSelected = this.gameObject.GetComponent<GameEngine>().currentTurn.playerNumSelected;
         //storing chosen values
         p1Type = playerTypeSelected.GetComponent<objectValue>().value;
         p1Num = playerNumSelected.GetComponent<objectValue>().value;
 
     }
-    public void compareInfo()
+    public void CompareInfo()
     {
         //Type 1 wins
         if (p1Type + p2Type == 2 || p1Type + p2Type == 3) 
         {
             winType = 1;
         }
+
         //Type 2 wins
         if ((p1Type + p2Type == 4 && p1Type == 2) || p1Type + p2Type == 5) 
         {
             winType = 2;
         }
+
         //Type 3 wins
         if ((p1Type + p2Type == 4 && p1Type != 2) || p1Type + p2Type == 6) 
         {
@@ -75,6 +79,7 @@ public class CompareResults : MonoBehaviour {
             else if (p1Num == p2Num)
                 Winner = 3;
         }
+
         //Lowest Number wins
         if (winType == 2)
         {
@@ -85,6 +90,7 @@ public class CompareResults : MonoBehaviour {
             else if (p1Num == p2Num)
                 Winner = 3;
         }
+
         //Number closest to 5 wins
         if (winType == 3)
         {

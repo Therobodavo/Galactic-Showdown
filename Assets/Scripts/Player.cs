@@ -12,7 +12,11 @@ public class Player
     public GameObject playerTypeSelected = null;
     public GameObject playerNumSelected = null;
 
-    public int intRoundsWon = 0;
+    //Integers to store numbers so they're not lost
+    public int playNum;
+    public int playType;
+
+    public int roundsWon = 0;
 
     public Player()
     {

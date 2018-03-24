@@ -16,20 +16,20 @@ public class GameEngine : MonoBehaviour {
 
     public GameObject playersData;
 
-    public Player currentTurn;
+    public Player currentPlayer;
 
 	void Start ()
     {
         playersData = GameObject.Find("PlayersData");
-        currentTurn = playersData.GetComponent<Players>().player1;
+        currentPlayer = playersData.GetComponent<Players>().player1;
 	}
 	
 	void Update ()
     {
         //Shows states of numbers and types
-		for(int i = 0; i < currentTurn.playerNumActive.Length; i++) 
+		for(int i = 0; i < currentPlayer.playerNumActive.Length; i++) 
         {
-            if(!currentTurn.playerNumActive[i] && numbers[i].activeSelf)
+            if(!currentPlayer.playerNumActive[i] && numbers[i].activeSelf)
             {
                 numbers[i].GetComponent<Button>().interactable = false;   
             }
@@ -37,7 +37,7 @@ public class GameEngine : MonoBehaviour {
             {
                 numbers[i].GetComponent<Button>().interactable = true;
             }
-            if(!currentTurn.playerTypeActive[i] && types[i].activeSelf) 
+            if(!currentPlayer.playerTypeActive[i] && types[i].activeSelf) 
             {
                 types[i].GetComponent<Button>().interactable = false; 
             }
@@ -48,9 +48,9 @@ public class GameEngine : MonoBehaviour {
         }
 
         //Shows current selections
-        if(currentTurn.playerNumSelected != null)
+        if(currentPlayer.playerNumSelected != null)
         {
-            selector[0].transform.GetChild(0).gameObject.GetComponent<Text>().text = currentTurn.playerNumSelected.transform.GetChild(0).GetComponent<Text>().text;
+            selector[0].transform.GetChild(0).gameObject.GetComponent<Text>().text = currentPlayer.playerNumSelected.transform.GetChild(0).GetComponent<Text>().text;
             selector[0].SetActive(true);
         }
         else
@@ -58,9 +58,9 @@ public class GameEngine : MonoBehaviour {
             selector[0].SetActive(false);
         }
 
-        if(currentTurn.playerTypeSelected != null) 
+        if(currentPlayer.playerTypeSelected != null) 
         {
-            selector[1].transform.GetChild(0).gameObject.GetComponent<Text>().text = currentTurn.playerTypeSelected.transform.GetChild(0).GetComponent<Text>().text;
+            selector[1].transform.GetChild(0).gameObject.GetComponent<Text>().text = currentPlayer.playerTypeSelected.transform.GetChild(0).GetComponent<Text>().text;
             selector[1].SetActive(true);
         }
         else
@@ -69,7 +69,7 @@ public class GameEngine : MonoBehaviour {
         }
 
         //Shows state of lock in button
-        if(currentTurn.playerNumSelected == null || currentTurn.playerTypeSelected == null)
+        if(currentPlayer.playerNumSelected == null || currentPlayer.playerTypeSelected == null)
         {
             lockInBtn.GetComponent<Button>().interactable = false;
         }
