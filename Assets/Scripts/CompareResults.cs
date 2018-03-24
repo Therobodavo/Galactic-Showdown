@@ -10,12 +10,15 @@ public class CompareResults : MonoBehaviour {
     //Player 1 attributes
     public int p1Type; // 1- highest, 2 lowest, 3 middle
     public int p1Num;
+    
     //Player 2 attributes
     public int p2Type;
-  public int p2Num;
+    public int p2Num;
+    
     //Winning Type
     public int winType;
-    //Winnung Player
+    
+    //Winning Player
     public int Winner; // 1- player1 wins, 2- player2 wins, 3- Draw
 
 
@@ -32,9 +35,6 @@ public class CompareResults : MonoBehaviour {
             checkInfo();
             compareInfo();
         }
-      
-       
-       
 	}
 
     public void checkInfo()

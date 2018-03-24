@@ -48,14 +48,18 @@ public class ButtonClick : MonoBehaviour
         {
             player1Selection[0].transform.GetChild(0).gameObject.GetComponent<Text>().text = this.gameObject.GetComponent<GameEngine>().currentTurn.playerNumSelected.tag;
             player1Selection[1].transform.GetChild(0).gameObject.GetComponent<Text>().text = this.gameObject.GetComponent<GameEngine>().currentTurn.playerTypeSelected.tag;
+
             player1Selection[0].SetActive(true);
             player1Selection[1].SetActive(true);
+
             player1Selection[2].GetComponent<Button>().interactable = false;
-            if(!player2Selection[0].activeSelf)
+
+            if (!player2Selection[0].activeSelf)
             {
                 this.gameObject.GetComponent<GameEngine>().currentTurn = playersData.GetComponent<Players>().player2;
                 currentPlayerText.GetComponent<Text>().text = "Player 2";
             }
+
             else
             {
                 SceneManager.LoadScene("Menu");
@@ -75,7 +79,7 @@ public class ButtonClick : MonoBehaviour
             }
             else
             {
-                SceneManager.LoadScene("Menu");
+                SceneManager.LoadScene("CompareScene");
             }
         }
 

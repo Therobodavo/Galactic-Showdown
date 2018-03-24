@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: 4d823dbc15b4d4045b8d8e177c67a5da
+  - enabled: 1
+    path: Assets/Scenes/CompareScene.unity
+    guid: 4dbe499a9ef2f4a49aac04b08aa68acf
