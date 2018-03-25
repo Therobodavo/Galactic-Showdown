@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class CompareResults : MonoBehaviour {
 
-    public GameObject playerTypeSelected = null;
-    public GameObject playerNumSelected = null;
-
     //Player 1 attributes
     public int p1Type; // 1- highest, 2 lowest, 3 middle
     public int p1Num;
@@ -22,33 +19,6 @@ public class CompareResults : MonoBehaviour {
     public int Winner; // 1- player1 wins, 2- player2 wins, 3- Draw
 
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        /*
-        //compare will start once the play selects both type and num
-        if(this.gameObject.GetComponent<GameEngine>().currentTurn.playerTypeSelected != null && this.gameObject.GetComponent<GameEngine>().currentTurn.playerNumSelected != null)
-        {
-            checkInfo();
-            CompareInfo();
-        }
-        */
-	}
-
-    public void checkInfo()
-    {
-       //cheking what variables player 1 choose
-       // playerTypeSelected = this.gameObject.GetComponent<GameEngine>().currentTurn.playerTypeSelected;
-       // playerNumSelected = this.gameObject.GetComponent<GameEngine>().currentTurn.playerNumSelected;
-        //storing chosen values
-        p1Type = playerTypeSelected.GetComponent<objectValue>().value;
-        p1Num = playerNumSelected.GetComponent<objectValue>().value;
-
-    }
     public void CompareInfo()
     {
         //Type 1 wins

@@ -17,11 +17,9 @@ public class ButtonClick : MonoBehaviour
     public GameObject playersData;
 
     public GameObject currentPlayerText;
-    GameEngine gameEng = new GameEngine();
     void Start()
     {
         playersData = GameObject.Find("PlayersData");
-        gameEng = this.gameObject.GetComponent<GameEngine>();
     }
     //Clears selected num and type
     private void ClearSelection() 
@@ -52,14 +50,14 @@ public class ButtonClick : MonoBehaviour
             player1Selection[0].transform.GetChild(0).gameObject.GetComponent<Text>().text = this.gameObject.GetComponent<GameEngine>().currentPlayer.playerNumSelected.tag;
             player1Selection[1].transform.GetChild(0).gameObject.GetComponent<Text>().text = this.gameObject.GetComponent<GameEngine>().currentPlayer.playerTypeSelected.tag;
 
+            playersData.GetComponent<Players>().player1.typeSelected = this.gameObject.GetComponent<GameEngine>().currentPlayer.playerTypeSelected.tag;
+            playersData.GetComponent<Players>().player1.numSelected = this.gameObject.GetComponent<GameEngine>().currentPlayer.playerNumSelected.tag;
+
             player1Selection[0].SetActive(true);
             player1Selection[1].SetActive(true);
 
             player1Selection[2].GetComponent<Button>().interactable = false;
 
-            //Setting player values
-            playersData.GetComponent<Players>().player1.playNum = numIndex;
-            playersData.GetComponent<Players>().player1.playType = typeIndex;
 
             if (!player2Selection[0].activeSelf)
             {
@@ -77,13 +75,14 @@ public class ButtonClick : MonoBehaviour
             player2Selection[0].transform.GetChild(0).gameObject.GetComponent<Text>().text = this.gameObject.GetComponent<GameEngine>().currentPlayer.playerNumSelected.tag;
             player2Selection[1].transform.GetChild(0).gameObject.GetComponent<Text>().text = this.gameObject.GetComponent<GameEngine>().currentPlayer.playerTypeSelected.tag;
 
+            playersData.GetComponent<Players>().player2.typeSelected = this.gameObject.GetComponent<GameEngine>().currentPlayer.playerTypeSelected.tag;
+            playersData.GetComponent<Players>().player2.numSelected = this.gameObject.GetComponent<GameEngine>().currentPlayer.playerNumSelected.tag;
+
             player2Selection[0].SetActive(true);
             player2Selection[1].SetActive(true);
 
             player2Selection[2].GetComponent<Button>().interactable = false;
 
-            playersData.GetComponent<Players>().player2.playNum = numIndex;
-            playersData.GetComponent<Players>().player2.playType = typeIndex;
             if (!player1Selection[0].activeSelf)
             {
                 this.gameObject.GetComponent<GameEngine>().currentPlayer = playersData.GetComponent<Players>().player1;

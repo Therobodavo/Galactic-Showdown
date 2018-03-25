@@ -5,14 +5,16 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 //Inheriting from CompareResults to have access to methods
-public class CompareShow : CompareResults
+public class CompareShow : MonoBehaviour
 {
     //Variables
-    public Players playerDat;
     public GameObject pd;
+
     public Text winText;
     public Text p1WinText;
     public Text p2WinText;
+    string winnerNum;
+    string winnerType;
     
 	// Use this for initialization
 	void Start()
@@ -20,50 +22,110 @@ public class CompareShow : CompareResults
         //Getting the players script to access data
         pd = GameObject.Find("PlayersData");
 
-        //Setting player values from script
-        //P1
-        p1Num = pd.GetComponent<Players>().player1.playNum;
-        p1Type = pd.GetComponent<Players>().player1.playType;
+        //Gets the type and number winner
+        winnerType= CompareType(pd.GetComponent<Players>().player1.typeSelected, pd.GetComponent<Players>().player2.typeSelected);      
+        winnerNum = CompareNum(pd.GetComponent<Players>().player1.numSelected, pd.GetComponent<Players>().player2.numSelected, winnerType);
 
-        //P2
-        p2Num = pd.GetComponent<Players>().player2.playNum;
-        p2Type = pd.GetComponent<Players>().player2.playType;
+        //Debug shows the turn choices
+        Debug.Log(pd.GetComponent<Players>().player1.typeSelected + " - " + pd.GetComponent<Players>().player1.numSelected);
+        Debug.Log(pd.GetComponent<Players>().player2.typeSelected + " - " + pd.GetComponent<Players>().player2.numSelected);
+        Debug.Log(winnerType);
+        Debug.Log(winnerNum);
 
-        //Running the method to see who won
-        CompareInfo();
-
-        //Checking the winner, and incrementing wins
-        if (Winner == 1)
+        //Checks who won
+        if(pd.GetComponent<Players>().player1.numSelected == winnerNum && pd.GetComponent<Players>().player2.numSelected == winnerNum)
         {
+            winText.text = "Neither player wins, it's a draw!";
+        }
+        else if(pd.GetComponent<Players>().player1.numSelected == winnerNum)
+        {
+            winText.text = "Player 1 wins!";
             pd.GetComponent<Players>().player1.roundsWon++;
         }
-        else if (Winner == 2)
+        else if(pd.GetComponent<Players>().player2.numSelected == winnerNum)
         {
+            winText.text = "Player 2 wins!";
             pd.GetComponent<Players>().player2.roundsWon++;
         }
+
+        //Displaying how many wins each player has
+        p1WinText.text = "Player 1 wins: " + pd.GetComponent<Players>().player1.roundsWon;
+        p2WinText.text = "Player 2 wins: " + pd.GetComponent<Players>().player2.roundsWon;
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
 
-		//Checking the winner, and setting text accordingly
-        if(Winner == 1)
+    }
+
+    //Compares 2 types
+    //1 beats 2, 2 beats 3, 3 beats 1
+    private string CompareType(string type1, string type2)
+    {
+        //Default win result is type 1
+        string result = type1;
+
+        //Compares the 2 types
+        switch(type1)
         {
-            winText.text = "Player 1 wins!";
+            case "Type1":
+                if(type2 == "Type3")
+                {
+                    result = type2;
+                }
+                break;
+            case "Type2":
+                if(type2 == "Type1")
+                {
+                    result = type2;
+                }
+                break;
+            case "Type3":
+                if(type2 == "Type2")
+                {
+                    result = type2;
+                }
+                break;
         }
-        else if (Winner == 2)
+        return result;
+    }
+
+    //Compares the 2 numbers
+    private string CompareNum(string num1, string num2, string winType)
+    {
+        //Default win result is num1
+        string winner = num1;
+
+        //Stores int versions of num1 and num2
+        int p1Num;
+        int p2Num;
+
+        //Converts strings to int
+        int.TryParse(num1, out p1Num);
+        int.TryParse(num2, out p2Num);
+
+        //Highest number wins
+        if (winType == "Type1")
         {
-            winText.text = "Player 2 wins!";
-        }
-        else
-        {
-            winText.text = "Neither player wins, it's a draw!";
+            if (p1Num < p2Num)
+                winner = num2;
         }
 
-        //Displaying how many wins each player has
-        p1WinText.text = "Player 1 wins: " + pd.GetComponent<Players>().player1.roundsWon;
-        p2WinText.text = "Player 2 wins: " + pd.GetComponent<Players>().player2.roundsWon;
+        //Lowest Number wins
+        if (winType == "Type2")
+        {
+            if (p1Num > p2Num)
+                winner = num2;
+        }
+
+        //Number closest to 5 wins
+        if (winType == "Type3")
+        {
+            if (Mathf.Abs(p1Num - 5) > Mathf.Abs(p2Num - 5))
+                winner = num2;
+         }
+         return winner;
     }
 
     //Switching back to the main scene
