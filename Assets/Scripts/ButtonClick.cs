@@ -10,13 +10,15 @@ using UnityEngine.UI;
 
 public class ButtonClick : MonoBehaviour
 {
-    
-    public GameObject[] player1Selection;
-    public GameObject[] player2Selection;
+    //Switching Players buttons
+    public GameObject player1Btn;
+    public GameObject player2Btn;
 
     public GameObject playersData;
 
     public GameObject currentPlayerText;
+
+    public GameObject userInput;
     void Start()
     {
         playersData = GameObject.Find("PlayersData");
@@ -47,53 +49,29 @@ public class ButtonClick : MonoBehaviour
         //Sets player selection display
         if(this.gameObject.GetComponent<GameEngine>().currentPlayer == playersData.GetComponent<Players>().player1)
         {
-            player1Selection[0].transform.GetChild(0).gameObject.GetComponent<Text>().text = this.gameObject.GetComponent<GameEngine>().currentPlayer.playerNumSelected.tag;
-            player1Selection[1].transform.GetChild(0).gameObject.GetComponent<Text>().text = this.gameObject.GetComponent<GameEngine>().currentPlayer.playerTypeSelected.tag;
 
             playersData.GetComponent<Players>().player1.typeSelected = this.gameObject.GetComponent<GameEngine>().currentPlayer.playerTypeSelected.tag;
             playersData.GetComponent<Players>().player1.numSelected = this.gameObject.GetComponent<GameEngine>().currentPlayer.playerNumSelected.tag;
 
-            player1Selection[0].SetActive(true);
-            player1Selection[1].SetActive(true);
+            //Disable input
+            playersData.GetComponent<Players>().player1.allowInput = false;
 
-            player1Selection[2].GetComponent<Button>().interactable = false;
-
-
-            if (!player2Selection[0].activeSelf)
-            {
-                this.gameObject.GetComponent<GameEngine>().currentPlayer = playersData.GetComponent<Players>().player2;
-                currentPlayerText.GetComponent<Text>().text = "Player 2";
-            }
-
-            else
-            {
-                SceneManager.LoadScene("Menu");
-            }
+            //Set waiting text
         }
         else
         {
-            player2Selection[0].transform.GetChild(0).gameObject.GetComponent<Text>().text = this.gameObject.GetComponent<GameEngine>().currentPlayer.playerNumSelected.tag;
-            player2Selection[1].transform.GetChild(0).gameObject.GetComponent<Text>().text = this.gameObject.GetComponent<GameEngine>().currentPlayer.playerTypeSelected.tag;
-
             playersData.GetComponent<Players>().player2.typeSelected = this.gameObject.GetComponent<GameEngine>().currentPlayer.playerTypeSelected.tag;
             playersData.GetComponent<Players>().player2.numSelected = this.gameObject.GetComponent<GameEngine>().currentPlayer.playerNumSelected.tag;
 
-            player2Selection[0].SetActive(true);
-            player2Selection[1].SetActive(true);
+            //Disable input
+            playersData.GetComponent<Players>().player2.allowInput = false;
 
-            player2Selection[2].GetComponent<Button>().interactable = false;
-
-            if (!player1Selection[0].activeSelf)
-            {
-                this.gameObject.GetComponent<GameEngine>().currentPlayer = playersData.GetComponent<Players>().player1;
-                currentPlayerText.GetComponent<Text>().text = "Player 1";
-            }
-            else
-            {
-                SceneManager.LoadScene("CompareScene");
-            }
+            //Set waiting text
         }
-
+        if(!playersData.GetComponent<Players>().player1.allowInput && !playersData.GetComponent<Players>().player2.allowInput)
+        {
+                SceneManager.LoadScene("CompareScene");
+        }
         ClearSelection();
     }
 
@@ -115,11 +93,17 @@ public class ButtonClick : MonoBehaviour
         {
              this.gameObject.GetComponent<GameEngine>().currentPlayer = playersData.GetComponent<Players>().player1;
              currentPlayerText.GetComponent<Text>().text = "Player 1";
+
+             player1Btn.SetActive(false);
+             player2Btn.SetActive(true);
         }
         else
         {
              this.gameObject.GetComponent<GameEngine>().currentPlayer =  playersData.GetComponent<Players>().player2;
              currentPlayerText.GetComponent<Text>().text = "Player 2";
+
+             player2Btn.SetActive(false);
+             player1Btn.SetActive(true);
         }
     }
 }
