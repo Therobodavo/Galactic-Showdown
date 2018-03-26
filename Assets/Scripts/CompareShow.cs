@@ -115,24 +115,24 @@ public class CompareShow : MonoBehaviour
             Win.GetComponent<SpriteRenderer>().sprite = TypeSprites[CheckValue(winnerType)];
             timer += 1 * Time.deltaTime;
         }
-        if (stage == 5)
+        if (stage == 4)
         {
             winText.text = "Number of Ships Sent";
             timer += 2 * Time.deltaTime;
         }
-        if (stage == 6)
+        if (stage == 5)
         {
             P1.SetActive(true);
-            P1.GetComponent<SpriteRenderer>().sprite = NumSprites[Int32.Parse((pd.GetComponent<Players>().player1.numSelected))];
+            P1.GetComponent<SpriteRenderer>().sprite = NumSprites[Int32.Parse((pd.GetComponent<Players>().player1.numSelected)) - 1];
+            timer += 2 * Time.deltaTime;
+        }
+        if (stage == 6)
+        {
+            P2.SetActive(true);
+            P2.GetComponent<SpriteRenderer>().sprite = NumSprites[Int32.Parse((pd.GetComponent<Players>().player2.numSelected)) - 1];
             timer += 2 * Time.deltaTime;
         }
         if (stage == 7)
-        {
-            P2.SetActive(true);
-            P2.GetComponent<SpriteRenderer>().sprite = NumSprites[Int32.Parse((pd.GetComponent<Players>().player2.numSelected))];
-            timer += 2 * Time.deltaTime;
-        }
-        if (stage == 8)
         {
             P1.SetActive(false);
             P2.SetActive(false);
@@ -151,7 +151,7 @@ public class CompareShow : MonoBehaviour
             timer += 1 * Time.deltaTime;
 
         }
-        if(stage == 9)
+        if(stage == 8)
         {
             SwitchScene();
         }
