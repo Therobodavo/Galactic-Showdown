@@ -16,6 +16,9 @@ TagManager:
   - Type1
   - Type2
   - Type3
+  - P1
+  - P2
+  - Winner
   layers:
   - Default
   - TransparentFX
