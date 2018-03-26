@@ -52,12 +52,6 @@ public class CompareShow : MonoBehaviour
         winnerType = CompareType(pd.GetComponent<Players>().player1.typeSelected, pd.GetComponent<Players>().player2.typeSelected);      
         winnerNum = CompareNum(pd.GetComponent<Players>().player1.numSelected, pd.GetComponent<Players>().player2.numSelected, winnerType);
 
-        //Debug shows the turn choices
-        Debug.Log(pd.GetComponent<Players>().player1.typeSelected + " - " + pd.GetComponent<Players>().player1.numSelected);
-        Debug.Log(pd.GetComponent<Players>().player2.typeSelected + " - " + pd.GetComponent<Players>().player2.numSelected);
-        Debug.Log(winnerType);
-        Debug.Log(winnerNum);
-
         //Checks who won
         if(pd.GetComponent<Players>().player1.numSelected == winnerNum && pd.GetComponent<Players>().player2.numSelected == winnerNum)
         {
@@ -77,6 +71,50 @@ public class CompareShow : MonoBehaviour
             pd.GetComponent<Players>().player2.roundsWon++;
         }
 
+        
+        if (!pd.GetComponent<Players>().suddenDeath)
+        {
+            bool activeGame = false;
+            foreach (bool i in pd.GetComponent<Players>().player1.playerNumActive)
+            {
+                if (i)
+                {
+                    activeGame = true;
+                    break;
+                }
+            }
+            if (pd.GetComponent<Players>().player1.roundsWon > pd.GetComponent<Players>().player2.roundsWon && !activeGame || pd.GetComponent<Players>().player1.roundsWon == 5)
+            {
+                //Player 1 wins
+                Debug.Log("Player 1 wins");
+            }
+            else if(pd.GetComponent<Players>().player2.roundsWon > pd.GetComponent<Players>().player1.roundsWon && !activeGame || pd.GetComponent<Players>().player2.roundsWon == 5)
+            {
+                //Player 2 wins
+                Debug.Log("Player 2 wins");
+            }
+            if (!activeGame)
+            {
+                //Sudden Death
+                Debug.Log("Sudden Death");
+                pd.GetComponent<Players>().suddenDeath = true;
+                pd.GetComponent<Players>().player1.ResetHand();
+                pd.GetComponent<Players>().player2.ResetHand();
+            }
+        }
+        else
+        {
+            if (pd.GetComponent<Players>().player1.roundsWon > pd.GetComponent<Players>().player2.roundsWon)
+            {
+                //Player 1 wins
+                Debug.Log("Player 1 wins -sudden death win");
+            }
+            else if (pd.GetComponent<Players>().player2.roundsWon > pd.GetComponent<Players>().player1.roundsWon)
+            {
+                //Player 2 wins
+                Debug.Log("Player 2 wins - sudden death win");
+            }
+        }
       
     }
 	

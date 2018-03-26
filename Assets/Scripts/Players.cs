@@ -8,7 +8,9 @@ public class Players : MonoBehaviour {
     public Player player2;
 
     public static Players data;
-    
+
+    public bool suddenDeath;
+
 	// Use this for initialization
     void Awake()
     {
@@ -24,5 +26,6 @@ public class Players : MonoBehaviour {
 
         player1 = new Player();
         player2 = new Player();
+        suddenDeath = false;
     }
 }
