@@ -17,8 +17,12 @@ public class Player
 
     public int roundsWon = 0;
 
+    public bool allowInput;
+
     public Player()
     {
+        allowInput = true;
+
         //Sets all buttons and types to active
 		for(int i = 0; i < playerNumActive.Length; i++) 
         {
