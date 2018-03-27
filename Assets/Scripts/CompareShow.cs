@@ -136,19 +136,32 @@ public class CompareShow : MonoBehaviour
         {
             P1.SetActive(true);
             P1.GetComponent<SpriteRenderer>().sprite = TypeSprites[CheckValue(pd.GetComponent<Players>().player1.typeSelected)];
-            timer += 2 * Time.deltaTime;
+            timer += 1 * Time.deltaTime;
         }
         if (stage == 2)
         {
             P2.SetActive(true);
             P2.GetComponent<SpriteRenderer>().sprite = TypeSprites[CheckValue(pd.GetComponent<Players>().player2.typeSelected)];
-            timer += 2 * Time.deltaTime;
+            timer += 1 * Time.deltaTime;
         }
         if (stage == 3)
         {
             P1.SetActive(false);
             P2.SetActive(false);
             winText.text = "Winning Action";
+            if (winnerType == "Type1")
+            {
+                winText.text = "You are Invading";
+            }
+            if (winnerType == "Type2")
+            {
+                winText.text = "You are Defending";
+            }
+            if (winnerType == "Type3")
+            {
+                winText.text = "A Treaty is Brokerd";
+            }
+
             Win.SetActive(true);
             Win.GetComponent<SpriteRenderer>().sprite = TypeSprites[CheckValue(winnerType)];
             timer += 1 * Time.deltaTime;
@@ -156,19 +169,19 @@ public class CompareShow : MonoBehaviour
         if (stage == 4)
         {
             winText.text = "Number of Ships Sent";
-            timer += 2 * Time.deltaTime;
+            timer += 1 * Time.deltaTime;
         }
         if (stage == 5)
         {
             P1.SetActive(true);
             P1.GetComponent<SpriteRenderer>().sprite = NumSprites[Int32.Parse((pd.GetComponent<Players>().player1.numSelected)) - 1];
-            timer += 2 * Time.deltaTime;
+            timer += 1 * Time.deltaTime;
         }
         if (stage == 6)
         {
             P2.SetActive(true);
             P2.GetComponent<SpriteRenderer>().sprite = NumSprites[Int32.Parse((pd.GetComponent<Players>().player2.numSelected)) - 1];
-            timer += 2 * Time.deltaTime;
+            timer += 1 * Time.deltaTime;
         }
         if (stage == 7)
         {
@@ -201,7 +214,7 @@ public class CompareShow : MonoBehaviour
     private string CompareType(string type1, string type2)
     {
         //Default win result is type 1
-        string result = type1;
+        string result = type2;
 
         //Compares the 2 types
         switch(type1)
@@ -209,19 +222,19 @@ public class CompareShow : MonoBehaviour
             case "Type1":
                 if(type2 == "Type3")
                 {
-                    result = type2;
+                    result = type1;
                 }
                 break;
             case "Type2":
                 if(type2 == "Type1")
                 {
-                    result = type2;
+                    result = type1;
                 }
                 break;
             case "Type3":
                 if(type2 == "Type2")
                 {
-                    result = type2;
+                    result = type1;
                 }
                 break;
         }
