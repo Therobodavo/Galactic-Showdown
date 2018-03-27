@@ -21,10 +21,14 @@ public class Player
 
     public Player()
     {
-        allowInput = true;
+        ResetHand();
+    }
 
+    public void ResetHand()
+    {
+        allowInput = true;
         //Sets all buttons and types to active
-		for(int i = 0; i < playerNumActive.Length; i++) 
+        for (int i = 0; i < playerNumActive.Length; i++)
         {
             playerNumActive[i] = true;
             playerTypeActive[i] = true;
