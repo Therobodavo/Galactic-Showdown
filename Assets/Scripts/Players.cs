@@ -10,6 +10,9 @@ public class Players : MonoBehaviour {
     public static Players data;
 
     public bool suddenDeath;
+    public bool startSuddenDeath;
+    public bool foundWinner;
+    public string playerWon;
 
 	// Use this for initialization
     void Awake()
@@ -27,5 +30,8 @@ public class Players : MonoBehaviour {
         player1 = new Player();
         player2 = new Player();
         suddenDeath = false;
+        startSuddenDeath = false;
+        foundWinner = false;
+
     }
 }

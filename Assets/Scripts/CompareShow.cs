@@ -158,7 +158,7 @@ public class CompareShow : MonoBehaviour
         }
         if(stage == 8)
         {
-            SwitchScene();
+            UpdateGameState();
         }
         
     }
@@ -263,18 +263,23 @@ public class CompareShow : MonoBehaviour
             if (pd.GetComponent<Players>().player1.roundsWon > pd.GetComponent<Players>().player2.roundsWon && !activeGame || pd.GetComponent<Players>().player1.roundsWon == 5)
             {
                 //Player 1 wins
-                Debug.Log("Player 1 wins");
+                pd.GetComponent<Players>().foundWinner = true;
+                pd.GetComponent<Players>().playerWon = "Player1";
+                SceneManager.LoadScene("GameStateChange");
             }
             else if(pd.GetComponent<Players>().player2.roundsWon > pd.GetComponent<Players>().player1.roundsWon && !activeGame || pd.GetComponent<Players>().player2.roundsWon == 5)
             {
                 //Player 2 wins
-                Debug.Log("Player 2 wins");
+                pd.GetComponent<Players>().foundWinner = true;
+                pd.GetComponent<Players>().playerWon = "Player2";
+                SceneManager.LoadScene("GameStateChange");
             }
             if (!activeGame)
             {
                 //Sudden Death
-                Debug.Log("Sudden Death");
+                pd.GetComponent<Players>().startSuddenDeath = true;
                 pd.GetComponent<Players>().suddenDeath = true;
+                SceneManager.LoadScene("GameStateChange");
                 pd.GetComponent<Players>().player1.ResetHand();
                 pd.GetComponent<Players>().player2.ResetHand();
             }
@@ -284,12 +289,16 @@ public class CompareShow : MonoBehaviour
             if (pd.GetComponent<Players>().player1.roundsWon > pd.GetComponent<Players>().player2.roundsWon)
             {
                 //Player 1 wins
-                Debug.Log("Player 1 wins -sudden death win");
+                pd.GetComponent<Players>().foundWinner = true;
+                pd.GetComponent<Players>().playerWon = "Player1";
+                SceneManager.LoadScene("GameStateChange");
             }
             else if (pd.GetComponent<Players>().player2.roundsWon > pd.GetComponent<Players>().player1.roundsWon)
             {
                 //Player 2 wins
-                Debug.Log("Player 2 wins - sudden death win");
+                pd.GetComponent<Players>().foundWinner = true;
+                pd.GetComponent<Players>().playerWon = "Player2";
+                SceneManager.LoadScene("GameStateChange");
             }
         }
     }
