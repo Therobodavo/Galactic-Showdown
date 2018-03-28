@@ -12,6 +12,8 @@ public class MenuSceneChange : MonoBehaviour
 
     public GameObject helpPanel;
 
+    public GameObject creditsPanel; 
+
     public void ChangeScene()
     {
         SceneManager.LoadScene(sceneName);
@@ -21,11 +23,20 @@ public class MenuSceneChange : MonoBehaviour
     {
         mainPanel.SetActive(false);
         helpPanel.SetActive(true);
+        creditsPanel.SetActive(false);
     }
 
     public void ShowMain()
     {
         mainPanel.SetActive(true);
         helpPanel.SetActive(false);
+        creditsPanel.SetActive(false);
+    }
+
+    public void ShowCredits()
+    {
+        mainPanel.SetActive(false);
+        helpPanel.SetActive(false);
+        creditsPanel.SetActive(true);
     }
 }
