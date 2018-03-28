@@ -2133,7 +2133,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &648791030
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3363,6 +3363,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   suddenDeath: 0
+  startSuddenDeath: 0
+  foundWinner: 0
+  playerWon: 
 --- !u!224 &903190519 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224170065532627596, guid: ad3333761ccce9e45a9b43eb4cfbb110,
@@ -4053,6 +4056,21 @@ Prefab:
       propertyPath: m_Type
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114245164136462942, guid: ad3333761ccce9e45a9b43eb4cfbb110,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114245164136462942, guid: ad3333761ccce9e45a9b43eb4cfbb110,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114245164136462942, guid: ad3333761ccce9e45a9b43eb4cfbb110,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ad3333761ccce9e45a9b43eb4cfbb110, type: 2}
   m_IsPrefabParent: 0
@@ -4355,6 +4373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7845dacaa744859479c62d0ebe37092e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numImage: {fileID: 0}
   selector:
   - {fileID: 643469423}
   - {fileID: 1727437189}
@@ -5229,7 +5248,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1636103317}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.7599983, y: 2.5900002, z: -0.23242186}
+  m_LocalPosition: {x: 1.0499992, y: 2.5900002, z: -0.23242186}
   m_LocalScale: {x: 0.017677667, y: 0.017677667, z: 0.017677667}
   m_Children: []
   m_Father: {fileID: 13697256}
@@ -5237,7 +5256,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.76, y: 2.59}
+  m_AnchoredPosition: {x: 1.05, y: 2.59}
   m_SizeDelta: {x: 109.391, y: 38.853}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1636103319

@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class GameEngine : MonoBehaviour {
 
     //Scene Objects
+    public Sprite numImage;
     public GameObject[] selector;
     public GameObject[] numbers;
     public GameObject[] types;
@@ -69,7 +70,7 @@ public class GameEngine : MonoBehaviour {
             //Shows current selections
             if(currentPlayer.playerNumSelected != null)
             {
-                Sprite numImage = numImages[0];
+               numImage = numImages[0];
                 switch(currentPlayer.playerNumSelected.tag)
                 {
                     case "1":
@@ -100,7 +101,8 @@ public class GameEngine : MonoBehaviour {
                          numImage = numImages[8];
                          break;
                 }
-                //selector[0].transform.GetChild(0).gameObject.GetComponent<Image>().sprite = numImage;
+              
+                selector[0].GetComponent<Image>().sprite = numImage;
                 selector[0].SetActive(true);
             }
             else
@@ -123,7 +125,7 @@ public class GameEngine : MonoBehaviour {
                          typeImage = typeImages[2];
                          break;
                 }
-                //selector[1].transform.GetChild(0).gameObject.GetComponent<Image>().sprite = typeImage;
+                selector[1].GetComponent<Image>().sprite = typeImage;
                 selector[1].SetActive(true);
             }
             else
