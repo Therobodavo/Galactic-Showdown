@@ -1275,7 +1275,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 28fb7555a4e6d2044baea778a3dfaf28,
+      objectReference: {fileID: 21300000, guid: 2c2087b56c260b74587c534d2a46c062,
         type: 3}
     - target: {fileID: 114946925630453376, guid: ad3333761ccce9e45a9b43eb4cfbb110,
         type: 2}
@@ -1636,7 +1636,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2c2087b56c260b74587c534d2a46c062,
+      objectReference: {fileID: 21300000, guid: 28fb7555a4e6d2044baea778a3dfaf28,
         type: 3}
     - target: {fileID: 114946925630453376, guid: ad3333761ccce9e45a9b43eb4cfbb110,
         type: 2}
@@ -2345,7 +2345,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 28fb7555a4e6d2044baea778a3dfaf28,
+      objectReference: {fileID: 21300000, guid: 2c2087b56c260b74587c534d2a46c062,
         type: 3}
     - target: {fileID: 114946925630453376, guid: ad3333761ccce9e45a9b43eb4cfbb110,
         type: 2}
@@ -2938,7 +2938,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2c2087b56c260b74587c534d2a46c062,
+      objectReference: {fileID: 21300000, guid: 28fb7555a4e6d2044baea778a3dfaf28,
         type: 3}
     - target: {fileID: 114946925630453376, guid: ad3333761ccce9e45a9b43eb4cfbb110,
         type: 2}
@@ -3303,7 +3303,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 28fb7555a4e6d2044baea778a3dfaf28,
+      objectReference: {fileID: 21300000, guid: 2c2087b56c260b74587c534d2a46c062,
         type: 3}
     - target: {fileID: 114946925630453376, guid: ad3333761ccce9e45a9b43eb4cfbb110,
         type: 2}
@@ -3648,7 +3648,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2c2087b56c260b74587c534d2a46c062,
+      objectReference: {fileID: 21300000, guid: 28fb7555a4e6d2044baea778a3dfaf28,
         type: 3}
     - target: {fileID: 114946925630453376, guid: ad3333761ccce9e45a9b43eb4cfbb110,
         type: 2}
@@ -4382,6 +4382,20 @@ MonoBehaviour:
   playersData: {fileID: 0}
   userInput: {fileID: 1379447420}
   waitingText: {fileID: 1580827502}
+  typeImages:
+  - {fileID: 21300000, guid: 0ffbb8b4c9ebd144fa07832484fc509d, type: 3}
+  - {fileID: 21300000, guid: 28fb7555a4e6d2044baea778a3dfaf28, type: 3}
+  - {fileID: 21300000, guid: 2c2087b56c260b74587c534d2a46c062, type: 3}
+  numImages:
+  - {fileID: 21300000, guid: b0802fa91e1f8ba41bec54d29129c1a8, type: 3}
+  - {fileID: 21300000, guid: 65855674748d1eb49b593830f07dc2ff, type: 3}
+  - {fileID: 21300000, guid: 5580727176366f6489af0cf4519dae83, type: 3}
+  - {fileID: 21300000, guid: 0eac5a0250ca02348960cd7ae42d6a16, type: 3}
+  - {fileID: 21300000, guid: c7b2ffe78d2fd1649be9643ebfdf9b67, type: 3}
+  - {fileID: 21300000, guid: eae767747c5b3034f9f4e19ea8789d37, type: 3}
+  - {fileID: 21300000, guid: 617f59bfbe2e3ec4ba444af1adfd15e1, type: 3}
+  - {fileID: 21300000, guid: 01d6c60bd4f5cf44b93b252a188925ad, type: 3}
+  - {fileID: 21300000, guid: edce4144220f8504d91713fa73004d80, type: 3}
 --- !u!1 &1379447420
 GameObject:
   m_ObjectHideFlags: 0
