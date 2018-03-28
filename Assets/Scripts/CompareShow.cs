@@ -153,7 +153,7 @@ public class CompareShow : MonoBehaviour
             //Displaying how many wins each player has
             p1WinText.text = "Player 1 wins: " + pd.GetComponent<Players>().player1.roundsWon;
             p2WinText.text = "Player 2 wins: " + pd.GetComponent<Players>().player2.roundsWon;
-            timer += 1 * Time.deltaTime;
+            timer += 0.5f * Time.deltaTime;
 
         }
         if(stage == 8)

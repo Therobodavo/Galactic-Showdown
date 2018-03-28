@@ -1,16 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameState : MonoBehaviour {
     
     public GameObject[] text;
     public GameObject mainMenuBtn;
     GameObject playerData;
-    
+    float timer;
+   public  float timerDelay;
 	// Use this for initialization
 	void Start ()
     {
+        timer = 0;
 	    playerData = GameObject.Find("PlayersData");
         text[0].SetActive(false);
         text[1].SetActive(false);
@@ -41,6 +44,18 @@ public class GameState : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if(playerData.GetComponent<Players>().suddenDeath && !playerData.GetComponent<Players>().foundWinner)
+        {
+            timer += 1 * Time.deltaTime;
+            if(timer > timerDelay * Time.deltaTime)
+            {
+                SwitchScene("Main");
+            }
+        }
+
 	}
+    public void SwitchScene(string scene)
+    {
+        SceneManager.LoadScene(scene);
+    }
 }
