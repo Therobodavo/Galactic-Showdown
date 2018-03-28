@@ -104,4 +104,8 @@ public class ButtonClick : MonoBehaviour
              player1Btn.SetActive(true);
         }
     }
+    public void SwitchScene(string scene)
+    {
+        SceneManager.LoadScene(scene);
+    }
 }
