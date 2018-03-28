@@ -455,7 +455,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dd9c3ae7ca18bdc4e88a3b0f6166d89f, type: 3}
   Timer: 0
   AniTime: 0
-  increase: 0
+  increase: 6
 --- !u!1001 &106606084
 Prefab:
   m_ObjectHideFlags: 0
@@ -1994,7 +1994,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dd9c3ae7ca18bdc4e88a3b0f6166d89f, type: 3}
   Timer: 0
   AniTime: 0
-  increase: 0
+  increase: 6
 --- !u!1 &643469423
 GameObject:
   m_ObjectHideFlags: 0
@@ -2564,7 +2564,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dd9c3ae7ca18bdc4e88a3b0f6166d89f, type: 3}
   Timer: 0
   AniTime: 0
-  increase: 0
+  increase: 6
 --- !u!1001 &824207062
 Prefab:
   m_ObjectHideFlags: 0
@@ -2769,7 +2769,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dd9c3ae7ca18bdc4e88a3b0f6166d89f, type: 3}
   Timer: 0
   AniTime: 0
-  increase: 0
+  increase: 6
 --- !u!224 &827370436 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224337087581468306, guid: 6ed099fc4a7a4d04d9a24983544201b2,
@@ -3148,7 +3148,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dd9c3ae7ca18bdc4e88a3b0f6166d89f, type: 3}
   Timer: 0
   AniTime: 0
-  increase: 0
+  increase: 6
 --- !u!1001 &874972103
 Prefab:
   m_ObjectHideFlags: 0
@@ -3895,7 +3895,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dd9c3ae7ca18bdc4e88a3b0f6166d89f, type: 3}
   Timer: 0
   AniTime: 0
-  increase: 0
+  increase: 6
 --- !u!1001 &1160149438
 Prefab:
   m_ObjectHideFlags: 0
@@ -4837,7 +4837,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dd9c3ae7ca18bdc4e88a3b0f6166d89f, type: 3}
   Timer: 0
   AniTime: 0
-  increase: 0
+  increase: 6
 --- !u!224 &1548579578 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224337087581468306, guid: 6ed099fc4a7a4d04d9a24983544201b2,
@@ -5043,7 +5043,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dd9c3ae7ca18bdc4e88a3b0f6166d89f, type: 3}
   Timer: 0
   AniTime: 0
-  increase: 0
+  increase: 6
 --- !u!4 &1564073805 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4156041149446294, guid: 2ae92c651b445f8419816e0032221384,
@@ -5813,7 +5813,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dd9c3ae7ca18bdc4e88a3b0f6166d89f, type: 3}
   Timer: 0
   AniTime: 0
-  increase: 0
+  increase: 6
 --- !u!224 &2115762147 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224170065532627596, guid: ad3333761ccce9e45a9b43eb4cfbb110,
