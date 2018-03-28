@@ -69,53 +69,7 @@ public class CompareShow : MonoBehaviour
             Winner = 2;
            // winText.text = "Player 2 wins!";
             pd.GetComponent<Players>().player2.roundsWon++;
-        }
-
-        
-        if (!pd.GetComponent<Players>().suddenDeath)
-        {
-            bool activeGame = false;
-            foreach (bool i in pd.GetComponent<Players>().player1.playerNumActive)
-            {
-                if (i)
-                {
-                    activeGame = true;
-                    break;
-                }
-            }
-            if (pd.GetComponent<Players>().player1.roundsWon > pd.GetComponent<Players>().player2.roundsWon && !activeGame || pd.GetComponent<Players>().player1.roundsWon == 5)
-            {
-                //Player 1 wins
-                Debug.Log("Player 1 wins");
-            }
-            else if(pd.GetComponent<Players>().player2.roundsWon > pd.GetComponent<Players>().player1.roundsWon && !activeGame || pd.GetComponent<Players>().player2.roundsWon == 5)
-            {
-                //Player 2 wins
-                Debug.Log("Player 2 wins");
-            }
-            if (!activeGame)
-            {
-                //Sudden Death
-                Debug.Log("Sudden Death");
-                pd.GetComponent<Players>().suddenDeath = true;
-                pd.GetComponent<Players>().player1.ResetHand();
-                pd.GetComponent<Players>().player2.ResetHand();
-            }
-        }
-        else
-        {
-            if (pd.GetComponent<Players>().player1.roundsWon > pd.GetComponent<Players>().player2.roundsWon)
-            {
-                //Player 1 wins
-                Debug.Log("Player 1 wins -sudden death win");
-            }
-            else if (pd.GetComponent<Players>().player2.roundsWon > pd.GetComponent<Players>().player1.roundsWon)
-            {
-                //Player 2 wins
-                Debug.Log("Player 2 wins - sudden death win");
-            }
-        }
-      
+        }   
     }
 	
 	// Update is called once per frame
@@ -155,11 +109,11 @@ public class CompareShow : MonoBehaviour
             }
             if (winnerType == "Type2")
             {
-                winText.text = "You are Defending";
+                winText.text = "A Treaty is Brokerd";
             }
             if (winnerType == "Type3")
             {
-                winText.text = "A Treaty is Brokerd";
+                winText.text = "You are Defending";
             }
 
             Win.SetActive(true);
@@ -213,8 +167,8 @@ public class CompareShow : MonoBehaviour
     //1 beats 2, 2 beats 3, 3 beats 1
     private string CompareType(string type1, string type2)
     {
-        //Default win result is type 1
-        string result = type2;
+        //Default win result is Type2
+        string result = type1;
 
         //Compares the 2 types
         switch(type1)
@@ -222,19 +176,19 @@ public class CompareShow : MonoBehaviour
             case "Type1":
                 if(type2 == "Type3")
                 {
-                    result = type1;
+                    result = type2;
                 }
                 break;
             case "Type2":
                 if(type2 == "Type1")
                 {
-                    result = type1;
+                    result = type2;
                 }
                 break;
             case "Type3":
                 if(type2 == "Type2")
                 {
-                    result = type1;
+                    result = type2;
                 }
                 break;
         }
@@ -263,14 +217,14 @@ public class CompareShow : MonoBehaviour
         }
 
         //Lowest Number wins
-        if (winType == "Type2")
+        if (winType == "Type3")
         {
             if (p1Num > p2Num)
                 winner = num2;
         }
 
         //Number closest to 5 wins
-        if (winType == "Type3")
+        if (winType == "Type2")
         {
             if (Mathf.Abs(p1Num - 5) > Mathf.Abs(p2Num - 5))
                 winner = num2;
@@ -291,5 +245,52 @@ public class CompareShow : MonoBehaviour
     public void SwitchScene()
     {
         SceneManager.LoadScene("Main");
+    }
+
+    public void UpdateGameState()
+    {
+        if (!pd.GetComponent<Players>().suddenDeath)
+        {
+            bool activeGame = false;
+            foreach (bool i in pd.GetComponent<Players>().player1.playerNumActive)
+            {
+                if (i)
+                {
+                    activeGame = true;
+                    break;
+                }
+            }
+            if (pd.GetComponent<Players>().player1.roundsWon > pd.GetComponent<Players>().player2.roundsWon && !activeGame || pd.GetComponent<Players>().player1.roundsWon == 5)
+            {
+                //Player 1 wins
+                Debug.Log("Player 1 wins");
+            }
+            else if(pd.GetComponent<Players>().player2.roundsWon > pd.GetComponent<Players>().player1.roundsWon && !activeGame || pd.GetComponent<Players>().player2.roundsWon == 5)
+            {
+                //Player 2 wins
+                Debug.Log("Player 2 wins");
+            }
+            if (!activeGame)
+            {
+                //Sudden Death
+                Debug.Log("Sudden Death");
+                pd.GetComponent<Players>().suddenDeath = true;
+                pd.GetComponent<Players>().player1.ResetHand();
+                pd.GetComponent<Players>().player2.ResetHand();
+            }
+        }
+        else
+        {
+            if (pd.GetComponent<Players>().player1.roundsWon > pd.GetComponent<Players>().player2.roundsWon)
+            {
+                //Player 1 wins
+                Debug.Log("Player 1 wins -sudden death win");
+            }
+            else if (pd.GetComponent<Players>().player2.roundsWon > pd.GetComponent<Players>().player1.roundsWon)
+            {
+                //Player 2 wins
+                Debug.Log("Player 2 wins - sudden death win");
+            }
+        }
     }
 }
