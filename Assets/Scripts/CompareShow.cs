@@ -247,6 +247,12 @@ public class CompareShow : MonoBehaviour
         SceneManager.LoadScene("Main");
     }
 
+    public void SwitchSceneAndUpdate()
+    {
+        UpdateGameState();
+        SceneManager.LoadScene("Main");
+    }
+
     public void UpdateGameState()
     {
         if (!pd.GetComponent<Players>().suddenDeath)
