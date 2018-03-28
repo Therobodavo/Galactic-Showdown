@@ -20,6 +20,10 @@ public class GameState : MonoBehaviour {
         {
             text[2].SetActive(true);
             playerData.GetComponent<Players>().startSuddenDeath = false;
+
+            //wait a few seconds
+
+            //go back to main player scene
         }
         else if(playerData.GetComponent<Players>().foundWinner)
         {
