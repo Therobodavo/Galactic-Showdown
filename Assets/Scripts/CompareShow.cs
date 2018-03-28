@@ -158,7 +158,7 @@ public class CompareShow : MonoBehaviour
         }
         if(stage == 8)
         {
-            UpdateGameState();
+            SwitchSceneAndUpdate();
         }
         
     }

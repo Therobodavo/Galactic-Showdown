@@ -33,7 +33,7 @@ public class Animate : MonoBehaviour {
     void Update()
     {
         
-        Timer += increase;
+        Timer += increase * Time.deltaTime;
         animations = Number;
         if(!button.interactable)
             animations = noNumber;
