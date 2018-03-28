@@ -21,6 +21,9 @@ public class GameEngine : MonoBehaviour {
 
     public Player currentPlayer;
 
+    public Sprite[] typeImages;
+    public Sprite[] numImages;
+
 	void Start ()
     {
         playersData = GameObject.Find("PlayersData");
@@ -66,7 +69,38 @@ public class GameEngine : MonoBehaviour {
             //Shows current selections
             if(currentPlayer.playerNumSelected != null)
             {
-                selector[0].transform.GetChild(0).gameObject.GetComponent<Text>().text = currentPlayer.playerNumSelected.transform.GetChild(0).GetComponent<Text>().text;
+                Sprite numImage = numImages[0];
+                switch(currentPlayer.playerNumSelected.tag)
+                {
+                    case "1":
+                         numImage = numImages[0];
+                         break;
+                    case "2":
+                         numImage = numImages[1];
+                         break;
+                    case "3":
+                         numImage = numImages[2];
+                         break;
+                    case "4":
+                         numImage = numImages[3];
+                         break;
+                    case "5":
+                         numImage = numImages[4];
+                         break;
+                    case "6":
+                         numImage = numImages[5];
+                         break;
+                    case "7":
+                         numImage = numImages[6];
+                         break;
+                    case "8":
+                         numImage = numImages[7];
+                         break;
+                    case "9":
+                         numImage = numImages[8];
+                         break;
+                }
+                //selector[0].transform.GetChild(0).gameObject.GetComponent<Image>().sprite = numImage;
                 selector[0].SetActive(true);
             }
             else
@@ -76,7 +110,20 @@ public class GameEngine : MonoBehaviour {
 
             if(currentPlayer.playerTypeSelected != null) 
             {
-                selector[1].transform.GetChild(0).gameObject.GetComponent<Text>().text = currentPlayer.playerTypeSelected.transform.GetChild(0).GetComponent<Text>().text;
+                Sprite typeImage = typeImages[0];
+                switch(currentPlayer.playerTypeSelected.tag)
+                {
+                    case "Type1":
+                         typeImage = typeImages[0];
+                         break;
+                    case "Type2":
+                         typeImage = typeImages[1];
+                         break;
+                    case "Type3":
+                         typeImage = typeImages[2];
+                         break;
+                }
+                //selector[1].transform.GetChild(0).gameObject.GetComponent<Image>().sprite = typeImage;
                 selector[1].SetActive(true);
             }
             else

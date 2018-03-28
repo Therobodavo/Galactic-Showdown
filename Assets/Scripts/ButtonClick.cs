@@ -46,7 +46,7 @@ public class ButtonClick : MonoBehaviour
         int.TryParse(name, out typeIndex);
         this.gameObject.GetComponent<GameEngine>().currentPlayer.playerTypeActive[typeIndex] = false;
 
-        //Sets player selection display
+        //Sets player selection
         if(this.gameObject.GetComponent<GameEngine>().currentPlayer == playersData.GetComponent<Players>().player1)
         {
 
@@ -56,7 +56,6 @@ public class ButtonClick : MonoBehaviour
             //Disable input
             playersData.GetComponent<Players>().player1.allowInput = false;
 
-            //Set waiting text
         }
         else
         {
@@ -66,7 +65,6 @@ public class ButtonClick : MonoBehaviour
             //Disable input
             playersData.GetComponent<Players>().player2.allowInput = false;
 
-            //Set waiting text
         }
         if(!playersData.GetComponent<Players>().player1.allowInput && !playersData.GetComponent<Players>().player2.allowInput)
         {
