@@ -25,13 +25,19 @@ public class GameEngine : MonoBehaviour {
     public Sprite[] typeImages;
     public Sprite[] numImages;
 
-	void Start ()
+
+
+    public Text P1;
+    public Text P2;
+
+    void Start ()
     {
         playersData = GameObject.Find("PlayersData");
         playersData.GetComponent<Players>().player1.allowInput = true;
         playersData.GetComponent<Players>().player2.allowInput = true;
         currentPlayer = playersData.GetComponent<Players>().player1;
-	}
+
+    }
 	
 	void Update ()
     {
@@ -151,5 +157,8 @@ public class GameEngine : MonoBehaviour {
         {
             waitingText.SetActive(true);
         }
-	}
+        P1.text = "P1: " + playersData.GetComponent<Players>().player1.roundsWon;
+        P2.text = "P2: " + playersData.GetComponent<Players>().player2.roundsWon;
+    }
+
 }

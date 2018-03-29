@@ -19,6 +19,8 @@ TagManager:
   - P1
   - P2
   - Winner
+  - Score1
+  - Score2
   layers:
   - Default
   - TransparentFX
