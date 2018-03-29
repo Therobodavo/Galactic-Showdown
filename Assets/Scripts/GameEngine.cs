@@ -48,10 +48,6 @@ public class GameEngine : MonoBehaviour {
             {
                 userInput.SetActive(true);
             }
-            if(waitingText.activeSelf)
-            {
-                waitingText.SetActive(false);
-            }
             //Shows states of numbers and types
 		    for(int i = 0; i < currentPlayer.playerNumActive.Length; i++) 
             {
@@ -152,10 +148,6 @@ public class GameEngine : MonoBehaviour {
         else if(userInput.activeSelf)
         {
             userInput.SetActive(false);
-        }
-        if(!currentPlayer.allowInput && !waitingText.activeSelf)
-        {
-            waitingText.SetActive(true);
         }
         P1.text = "P1: " + playersData.GetComponent<Players>().player1.roundsWon;
         P2.text = "P2: " + playersData.GetComponent<Players>().player2.roundsWon;

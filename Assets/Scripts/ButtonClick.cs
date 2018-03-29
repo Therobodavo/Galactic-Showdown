@@ -10,10 +10,6 @@ using UnityEngine.UI;
 
 public class ButtonClick : MonoBehaviour
 {
-    //Switching Players buttons
-    public GameObject player1Btn;
-    public GameObject player2Btn;
-
     public GameObject playersData;
 
     public GameObject currentPlayerText;
@@ -56,6 +52,11 @@ public class ButtonClick : MonoBehaviour
             //Disable input
             playersData.GetComponent<Players>().player1.allowInput = false;
 
+            //Switch Players
+            currentPlayerText.GetComponent<Text>().text = "Player 2";
+            this.gameObject.GetComponent<GameEngine>().currentPlayer = playersData.GetComponent<Players>().player2;
+            
+
         }
         else
         {
@@ -64,6 +65,10 @@ public class ButtonClick : MonoBehaviour
 
             //Disable input
             playersData.GetComponent<Players>().player2.allowInput = false;
+
+            //Switch Players
+            currentPlayerText.GetComponent<Text>().text = "Player 1";
+            this.gameObject.GetComponent<GameEngine>().currentPlayer = playersData.GetComponent<Players>().player2;
 
         }
         if(!playersData.GetComponent<Players>().player1.allowInput && !playersData.GetComponent<Players>().player2.allowInput)
@@ -91,17 +96,11 @@ public class ButtonClick : MonoBehaviour
         {
              this.gameObject.GetComponent<GameEngine>().currentPlayer = playersData.GetComponent<Players>().player1;
              currentPlayerText.GetComponent<Text>().text = "Player 1";
-
-             player1Btn.SetActive(false);
-             player2Btn.SetActive(true);
         }
         else
         {
              this.gameObject.GetComponent<GameEngine>().currentPlayer =  playersData.GetComponent<Players>().player2;
              currentPlayerText.GetComponent<Text>().text = "Player 2";
-
-             player2Btn.SetActive(false);
-             player1Btn.SetActive(true);
         }
     }
     public void SwitchScene(string scene)
