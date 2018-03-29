@@ -593,13 +593,13 @@ MonoBehaviour:
   m_Text: 'Welcome to Galactic Showdown!
 
 
-    To play, choose multiplayer from the previous menu
+    To play, choose play from the previous menu
 
 
     Select a number, and a type, and lock in your selection.
 
 
-    Your goal is to beat your opponent''s cards, and win as many turns as you can. '
+    Your goal is to beat your opponent''s number, and win as many turns as you can. '
 --- !u!222 &421041898
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -894,7 +894,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 705620640}
-        m_MethodName: ShowMain
+        m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1369,7 +1369,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Multiplayer
+  m_Text: Play
 --- !u!222 &1198168190
 CanvasRenderer:
   m_ObjectHideFlags: 0
