@@ -15,6 +15,10 @@ public class ButtonClick : MonoBehaviour
     public GameObject currentPlayerText;
 
     public GameObject userInput;
+
+    public Material red;
+    public GameObject monitor;
+
     void Start()
     {
         playersData = GameObject.Find("PlayersData");
@@ -53,6 +57,7 @@ public class ButtonClick : MonoBehaviour
             playersData.GetComponent<Players>().player1.allowInput = false;
 
             //Switch Players
+            monitor.GetComponent<SpriteRenderer>().material = red;
             currentPlayerText.GetComponent<Text>().text = "Player 2";
             this.gameObject.GetComponent<GameEngine>().currentPlayer = playersData.GetComponent<Players>().player2;
             
@@ -65,10 +70,6 @@ public class ButtonClick : MonoBehaviour
 
             //Disable input
             playersData.GetComponent<Players>().player2.allowInput = false;
-
-            //Switch Players
-            currentPlayerText.GetComponent<Text>().text = "Player 1";
-            this.gameObject.GetComponent<GameEngine>().currentPlayer = playersData.GetComponent<Players>().player2;
 
         }
         if(!playersData.GetComponent<Players>().player1.allowInput && !playersData.GetComponent<Players>().player2.allowInput)
