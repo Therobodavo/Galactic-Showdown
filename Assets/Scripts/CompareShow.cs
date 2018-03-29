@@ -271,6 +271,7 @@ public class CompareShow : MonoBehaviour
                 //Player 1 wins
                 pd.GetComponent<Players>().foundWinner = true;
                 pd.GetComponent<Players>().playerWon = "Player1";
+                Debug.Log("PLAYER 1 WINS - REG");
                 SceneManager.LoadScene("GameStateChange");
             }
             else if(pd.GetComponent<Players>().player2.roundsWon > pd.GetComponent<Players>().player1.roundsWon && !activeGame || pd.GetComponent<Players>().player2.roundsWon == 5)
@@ -278,6 +279,7 @@ public class CompareShow : MonoBehaviour
                 //Player 2 wins
                 pd.GetComponent<Players>().foundWinner = true;
                 pd.GetComponent<Players>().playerWon = "Player2";
+                Debug.Log("PLAYER 2 WINS - REG");
                 SceneManager.LoadScene("GameStateChange");
             }
             if (!activeGame)
@@ -285,6 +287,7 @@ public class CompareShow : MonoBehaviour
                 //Sudden Death
                 pd.GetComponent<Players>().startSuddenDeath = true;
                 pd.GetComponent<Players>().suddenDeath = true;
+                Debug.Log("SUDDEN DEATH");
                 SceneManager.LoadScene("GameStateChange");
                 pd.GetComponent<Players>().player1.ResetHand();
                 pd.GetComponent<Players>().player2.ResetHand();
@@ -297,6 +300,7 @@ public class CompareShow : MonoBehaviour
                 //Player 1 wins
                 pd.GetComponent<Players>().foundWinner = true;
                 pd.GetComponent<Players>().playerWon = "Player1";
+                Debug.Log("PLAYER 1 WINS - Sudden Death");
                 SceneManager.LoadScene("GameStateChange");
             }
             else if (pd.GetComponent<Players>().player2.roundsWon > pd.GetComponent<Players>().player1.roundsWon)
@@ -304,6 +308,7 @@ public class CompareShow : MonoBehaviour
                 //Player 2 wins
                 pd.GetComponent<Players>().foundWinner = true;
                 pd.GetComponent<Players>().playerWon = "Player2";
+                Debug.Log("PLAYER 2 WINS - Sudden Death");
                 SceneManager.LoadScene("GameStateChange");
             }
         }
