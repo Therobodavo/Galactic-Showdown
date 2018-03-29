@@ -71,40 +71,8 @@ public class GameEngine : MonoBehaviour {
 
             //Shows current selections
             if(currentPlayer.playerNumSelected != null)
-            {
-               numImage = numImages[0];
-                switch(currentPlayer.playerNumSelected.tag)
-                {
-                    case "1":
-                         numImage = numImages[0];
-                         break;
-                    case "2":
-                         numImage = numImages[1];
-                         break;
-                    case "3":
-                         numImage = numImages[2];
-                         break;
-                    case "4":
-                         numImage = numImages[3];
-                         break;
-                    case "5":
-                         numImage = numImages[4];
-                         break;
-                    case "6":
-                         numImage = numImages[5];
-                         break;
-                    case "7":
-                         numImage = numImages[6];
-                         break;
-                    case "8":
-                         numImage = numImages[7];
-                         break;
-                    case "9":
-                         numImage = numImages[8];
-                         break;
-                }
-              
-                selector[0].GetComponent<Image>().sprite = numImage;
+            { 
+                selector[0].GetComponent<Image>().sprite = currentPlayer.playerNumSelected.GetComponent<Image>().sprite;
                 selector[0].SetActive(true);
             }
             else
@@ -114,20 +82,7 @@ public class GameEngine : MonoBehaviour {
 
             if(currentPlayer.playerTypeSelected != null) 
             {
-                Sprite typeImage = typeImages[0];
-                switch(currentPlayer.playerTypeSelected.tag)
-                {
-                    case "Type1":
-                         typeImage = typeImages[0];
-                         break;
-                    case "Type2":
-                         typeImage = typeImages[1];
-                         break;
-                    case "Type3":
-                         typeImage = typeImages[2];
-                         break;
-                }
-                selector[1].GetComponent<Image>().sprite = typeImage;
+                selector[1].GetComponent<Image>().sprite = currentPlayer.playerTypeSelected.GetComponent<Image>().sprite;
                 selector[1].SetActive(true);
             }
             else
@@ -149,6 +104,8 @@ public class GameEngine : MonoBehaviour {
         {
             userInput.SetActive(false);
         }
+
+        //Sets score text
         P1.text = "P1: " + playersData.GetComponent<Players>().player1.roundsWon;
         P2.text = "P2: " + playersData.GetComponent<Players>().player2.roundsWon;
     }

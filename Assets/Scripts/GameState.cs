@@ -19,23 +19,19 @@ public class GameState : MonoBehaviour {
         text[1].SetActive(false);
         text[2].SetActive(false);
         mainMenuBtn.SetActive(false);
-        Debug.Log("GAME STATE SCREEN");
         if(playerData.GetComponent<Players>().startSuddenDeath)
         {
             text[2].SetActive(true);
-            Debug.Log("START SUDDEN DEATH");
             playerData.GetComponent<Players>().startSuddenDeath = false;
         }
         else if(playerData.GetComponent<Players>().foundWinner)
         {
             if(playerData.GetComponent<Players>().playerWon == "Player1")
             {
-                Debug.Log("PLAYER 1 WON ON GAME STATES SCREEN");
                 text[0].SetActive(true);
             }
             else
             {
-                Debug.Log("PLAYER 2 WON ON GAME STATES SCREEN");
                 text[1].SetActive(true);
             }
             mainMenuBtn.SetActive(true);
@@ -49,7 +45,6 @@ public class GameState : MonoBehaviour {
             timer += 1 * Time.deltaTime;
             if(timer > timerDelay * Time.deltaTime)
             {
-                Debug.Log("SUDDEN DEATH - BACK TO MAIN");
                 SwitchScene("Main");
             }
         }
