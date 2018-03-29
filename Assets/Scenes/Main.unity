@@ -628,7 +628,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0ffbb8b4c9ebd144fa07832484fc509d,
+      objectReference: {fileID: 21300000, guid: 7baac0199a2e80a489935da4ff8eff11,
         type: 3}
     - target: {fileID: 114946925630453376, guid: ad3333761ccce9e45a9b43eb4cfbb110,
         type: 2}
@@ -796,7 +796,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0ffbb8b4c9ebd144fa07832484fc509d,
+      objectReference: {fileID: 21300000, guid: 7baac0199a2e80a489935da4ff8eff11,
         type: 3}
     - target: {fileID: 114946925630453376, guid: ad3333761ccce9e45a9b43eb4cfbb110,
         type: 2}
@@ -3674,7 +3674,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 0ffbb8b4c9ebd144fa07832484fc509d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7baac0199a2e80a489935da4ff8eff11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4405,7 +4405,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0ffbb8b4c9ebd144fa07832484fc509d,
+      objectReference: {fileID: 21300000, guid: 7baac0199a2e80a489935da4ff8eff11,
         type: 3}
     - target: {fileID: 114946925630453376, guid: ad3333761ccce9e45a9b43eb4cfbb110,
         type: 2}
@@ -4831,7 +4831,7 @@ MonoBehaviour:
   userInput: {fileID: 1379447420}
   waitingText: {fileID: 1580827502}
   typeImages:
-  - {fileID: 21300000, guid: 0ffbb8b4c9ebd144fa07832484fc509d, type: 3}
+  - {fileID: 0}
   - {fileID: 21300000, guid: 28fb7555a4e6d2044baea778a3dfaf28, type: 3}
   - {fileID: 21300000, guid: 2c2087b56c260b74587c534d2a46c062, type: 3}
   numImages:

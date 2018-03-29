@@ -324,7 +324,7 @@ SpriteRenderer:
   m_Size: {x: 2.91, y: 2.72}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!4 &322889623
 Transform:
@@ -382,7 +382,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dd996cdf123e9c0459ed33a8e820f916, type: 3}
   - {fileID: 21300000, guid: a6fd60f4d82d112408f806fbc723ec21, type: 3}
   TypeSprites:
-  - {fileID: 21300000, guid: 0ffbb8b4c9ebd144fa07832484fc509d, type: 3}
+  - {fileID: 21300000, guid: 7baac0199a2e80a489935da4ff8eff11, type: 3}
   - {fileID: 21300000, guid: d174d595793b0564f8ceeabf87d7d03d, type: 3}
   - {fileID: 21300000, guid: 2c2087b56c260b74587c534d2a46c062, type: 3}
   P1: {fileID: 0}
