@@ -151,8 +151,8 @@ public class CompareShow : MonoBehaviour
                 winText.text = "Neither player wins, it's a draw!";
 
             //Displaying how many wins each player has
-            p1WinText.text = "Player 1 wins: " + pd.GetComponent<Players>().player1.roundsWon;
-            p2WinText.text = "Player 2 wins: " + pd.GetComponent<Players>().player2.roundsWon;
+            p1WinText.text = "Player 1: " + pd.GetComponent<Players>().player1.roundsWon;
+            p2WinText.text = "Player 2: " + pd.GetComponent<Players>().player2.roundsWon;
             timer += 0.5f * Time.deltaTime;
 
         }
