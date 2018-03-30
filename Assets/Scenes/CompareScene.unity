@@ -370,7 +370,7 @@ MonoBehaviour:
   winText: {fileID: 82275290}
   p1WinText: {fileID: 613747219}
   p2WinText: {fileID: 2123243184}
-  timerDelay: 100
+  timerDelay: 60
   NumSprites:
   - {fileID: 21300000, guid: 8f3307f3eb2fd3249b4978e39a2c427b, type: 3}
   - {fileID: 21300000, guid: 3f882c0b11c20d64caa76d227081b9b5, type: 3}
