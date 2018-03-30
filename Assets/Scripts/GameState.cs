@@ -54,4 +54,9 @@ public class GameState : MonoBehaviour {
     {
         SceneManager.LoadScene(scene);
     }
+    public void Reset()
+    {
+        Destroy(playerData);
+        SceneManager.LoadScene("Menu");
+    }
 }
