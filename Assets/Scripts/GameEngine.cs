@@ -14,24 +14,20 @@ public class GameEngine : MonoBehaviour {
     public GameObject[] numbers;
     public GameObject[] types;
     public GameObject lockInBtn;
-
-    public GameObject playersData;
-
     public GameObject userInput;
     public GameObject waitingText;
-
-    public Player currentPlayer;
-
     public Sprite[] typeImages;
     public Sprite[] numImages;
-
-
-
     public Text P1;
     public Text P2;
 
+    //Reference to player data
+    public GameObject playersData;
+    public Player currentPlayer;
+
     void Start ()
     {
+        //Initialize data, get existing data
         playersData = GameObject.Find("PlayersData");
         playersData.GetComponent<Players>().player1.allowInput = true;
         playersData.GetComponent<Players>().player2.allowInput = true;
@@ -39,9 +35,10 @@ public class GameEngine : MonoBehaviour {
 
     }
 	
+    //Main loop
 	void Update ()
     {
-        
+        //Checks if move has been picked
         if(currentPlayer.allowInput)
         {
             if(!userInput.activeSelf)

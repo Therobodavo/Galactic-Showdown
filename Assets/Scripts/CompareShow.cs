@@ -20,14 +20,14 @@ public class CompareShow : MonoBehaviour
     string winnerType;
 
     float timer;
-   public  float timerDelay;
+    public  float timerDelay;
     float stage;
     float Winner; // 1- player1, 2- player 2, 3- tie
 
     public Sprite[] NumSprites;
     public Sprite[] TypeSprites;
-  public   GameObject P1;
-  public  GameObject P2;
+    public   GameObject P1;
+    public  GameObject P2;
     GameObject Win;
 
     // Use this for initialization
@@ -72,9 +72,9 @@ public class CompareShow : MonoBehaviour
         }   
     }
 	
-	// Update is called once per frame
 	void Update ()
     {
+        //Timer code, triggers changes
         if(timer > timerDelay * Time.deltaTime)
         {
             timer = 0;
